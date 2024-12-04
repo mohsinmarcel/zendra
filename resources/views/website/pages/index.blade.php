@@ -9,8 +9,8 @@
         <div class="slide">
             <div class="blur-up lazyload bg-size">
                 <img class="blur-up lazyload bg-img"
-                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-2.jpg"
-                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-2.jpg"
+                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-10.jpg"
+                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-10.jpg"
                     alt="Shop Our New Collection" title="Shop Our New Collection" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">
@@ -27,13 +27,13 @@
         <div class="slide">
             <div class="blur-up lazyload bg-size">
                 <img class="blur-up lazyload bg-img"
-                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-4.jpg"
-                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-4.jpg"
-                    alt="Summer Bikini Collection" title="Summer Bikini Collection" />
+                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-12.jpg"
+                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-12.jpg"
+                    alt="Summer Bikini Collection" title="Summer  Collection" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">
                         <div class="wrap-caption center">
-                            <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
+                            <h2 class="h1 mega-title slideshow__title">Summer  Collection</h2>
                             <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
                                 only</span>
                             <span class="btn">Shop now</span>
