@@ -1,174 +1,183 @@
-
-
-<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-  <!-- ============================================== TOP MENU ============================================== -->
-  {{-- <div class="top-bar animate-dropdown">
-    <div class="container">
-      <div class="header-top-inner">
-        <div class="cnt-account">
-          <ul class="list-unstyled">
-            <li class="myaccount"><a href="#"><span>My Account</span></a></li>
-            <li class="wishlist"><a href="#"><span>Wishlist</span></a></li>
-            <li class="header_cart hidden-xs"><a href="#"><span>My Cart</span></a></li>
-            <li class="check"><a href="#"><span>Checkout</span></a></li>
-            <li class="login"><a href="#"><span>Login</span></a></li>
-          </ul>
-        </div>
-        <!-- /.cnt-account -->
-        <div class="clearfix"></div>
-      </div>
-      <!-- /.header-top-inner -->
-    </div>
-    <!-- /.container -->
-  </div> --}}
-  <!-- /.header-top -->
-  <!-- ============================================== TOP MENU : END ============================================== -->
-  <div class="main-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
-          <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="assets/logo.png" style="height:55px;" alt="logo"> </a> </div>
-          <!-- /.logo -->
-          <!-- ============================================================= LOGO : END ============================================================= --> </div>
-        <!-- /.logo-holder -->
-
-        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-12 top-search-holder">
-          <!-- /.contact-row -->
-          <!-- ============================================================= SEARCH AREA ============================================================= -->
-          <div class="search-area">
-            <form>
-              <div class="control-group">
-                {{-- <ul class="categories-filter animate-dropdown">
-                  <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu" >
-                      <li class="menu-header">Computer</li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Clothing</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Electronics</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Shoes</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Watches</a></li>
-                    </ul>
-                  </li>
-                </ul> --}}
-                <input class="search-field" placeholder="Search here..." />
-                <a class="search-button" href="#" ></a> </div>
-            </form>
-          </div>
-          <!-- /.search-area -->
-          <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
-        <!-- /.top-search-holder -->
-
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 animate-dropdown top-cart-row">
-          <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
-
-          <div class="dropdown dropdown-cart"> <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-            <div class="items-cart-inner">
-              <div class="basket">
-              <div class="basket-item-count"><span class="count">0</span></div>
-              <div class="total-price-basket"> <span class="lbl">Your Shopping Cart</span> <span class="value">Rs:0/-</span> </div>
-              </div>
-            </div>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <div class="cart-item product-summary">
-                  <div class="row">
-                    <div class="col-xs-4">
-                      <div class="image"> <a href="detail.html"><img src="assets/images/products/p4.jpg" alt=""></a> </div>
+       <!--Top Header-->
+       <div class="top-header">
+        <div class="container-fluid">
+            <div class="row">
+            	<div class="col-10 col-sm-8 col-md-5 col-lg-4">
+                    <div class="currency-picker">
+                        <span class="selected-currency">USD</span>
+                        <ul id="currencies">
+                            <li data-currency="INR" class="">INR</li>
+                            <li data-currency="GBP" class="">GBP</li>
+                            <li data-currency="CAD" class="">CAD</li>
+                            <li data-currency="USD" class="selected">USD</li>
+                            <li data-currency="AUD" class="">AUD</li>
+                            <li data-currency="EUR" class="">EUR</li>
+                            <li data-currency="JPY" class="">JPY</li>
+                        </ul>
                     </div>
-                    <div class="col-xs-7">
-                      <h3 class="name"><a href="index8a95.html?page-detail">Headphones</a></h3>
-                      <div class="price">Rs:0/-</div>
+                    <div class="language-dropdown">
+                        <span class="language-dd">English</span>
+                        <ul id="language">
+                            <li class="">German</li>
+                            <li class="">French</li>
+                        </ul>
                     </div>
-                    <div class="col-xs-1 action"> <a href="#"><i class="fa fa-trash"></i></a> </div>
-                  </div>
+                    <p class="phone-no"><i class="anm anm-phone-s"></i> +440 0(111) 044 833</p>
                 </div>
-                <!-- /.cart-item -->
-                <div class="clearfix"></div>
-                <hr>
-                <div class="clearfix cart-total">
-                  <div class="pull-right"> <span class="text">Sub Total :</span><span class='price'>$600.00</span> </div>
-                  <div class="clearfix"></div>
-                  <a href="checkout.html" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a> </div>
-                <!-- /.cart-total-->
-
-              </li>
-            </ul>
-            <!-- /.dropdown-menu-->
-          </div>
-          <!-- /.dropdown-cart -->
-
-          <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= --> </div>
-        <!-- /.top-cart-row -->
-      </div>
-      <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-  </div>
-  <!-- /.main-header -->
-
-  <!-- ============================================== NAVBAR ============================================== -->
-  <div class="header-nav animate-dropdown">
-    <div class="container">
-      <div class="yamm navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-       <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-       <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        </div>
-        <div class="nav-bg-class">
-          <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
-            <div class="nav-outer">
-              <ul class="nav navbar-nav">
-                <li class="active dropdown"> <a href="home.html">Home</a> </li>
-                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Shop By Categories</a>
-                    @php
-                        $categories = App\Helpers\Helper::getCategories();
-                    @endphp
-                  <ul class="dropdown-menu pages">
-                    <li>
-                      <div class="yamm-content">
-                        <div class="row">
-                          <div class="col-xs-12 col-menu">
-                            <ul class="links">
-                                @if (!empty($categories))
-                                    @foreach ($categories as $category)
-                                    <li><a href="">{{$category->name}}</a></li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown"> <a href="home.html">Help & Support</a> </li>
-                <li class="dropdown navbar-right special-menu"> <a href="{{route('user.register')}}">Signup</a></li>
-                <li class="dropdown navbar-right special-menu"> <a href="#">|</a></li>
-                <li class="dropdown navbar-right special-menu"> <a href="{{route('user.login')}}">Login</a></li>
-
-              </ul>
-              <!-- /.navbar-nav -->
-              <div class="clearfix"></div>
+                <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
+                	<div class="text-center"><p class="top-header_middle-text"> Worldwide Express Shipping</p></div>
+                </div>
+                <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
+                	<span class="user-menu d-block d-lg-none"><i class="anm anm-user-al" aria-hidden="true"></i></span>
+                    <ul class="customer-links list-inline">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Create Account</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- /.nav-outer -->
-          </div>
-          <!-- /.navbar-collapse -->
-
         </div>
-        <!-- /.nav-bg-class -->
-      </div>
-      <!-- /.navbar-default -->
     </div>
-    <!-- /.container-class -->
+    <!--End Top Header-->
+    <!--Header-->
+    <div class="header-wrap classicHeader animated d-flex">
+    	<div class="container-fluid">
+            <div class="row align-items-center">
+            	<!--Desktop Logo-->
+                <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
+                    <a href="index.html">
+                    	<img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                    </a>
+                </div>
+                <!--End Desktop Logo-->
+                <div class="col-2 col-sm-3 col-md-3 col-lg-8">
+                	<div class="d-block d-lg-none">
+                        <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                        	<i class="icon anm anm-times-l"></i>
+                            <i class="anm anm-bars-r"></i>
+                        </button>
+                    </div>
+                	<!--Desktop Menu-->
+                	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
+                        <ul id="siteNav" class="site-nav medium center hidearrow">
+                            <li class="lvl1 parent megamenu"><a href="index.php">Home <i class="anm anm-angle-down-l"></i></a>
 
-  </div>
-  <!-- /.header-nav -->
-  <!-- ============================================== NAVBAR : END ============================================== -->
+                            </li>
+                            <li class="lvl1 parent megamenu"><a href="shop.php">Shop <i class="anm anm-angle-down-l"></i></a>
 
-</header>
+                            </li>
+                        <li class="lvl1 parent megamenu"><a href="#">Product <i class="anm anm-angle-down-l"></i></a>
 
-<!-- ============================================== HEADER : END ============================================== -->
+                        </li>
+                        <li class="lvl1 parent dropdown"><a href="#">Pages <i class="anm anm-angle-down-l"></i></a>
+                          <ul class="dropdown">
+                          	<li><a href="cart-variant1.html" class="site-nav">Cart Page <i class="anm anm-angle-right-l"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="cart-variant1.html" class="site-nav">Cart Variant1</a></li>
+                                    <li><a href="cart-variant2.html" class="site-nav">Cart Variant2</a></li>
+                                 </ul>
+                            </li>
+                            <li><a href="compare-variant1.html" class="site-nav">Compare Product <i class="anm anm-angle-right-l"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="compare-variant1.html" class="site-nav">Compare Variant1</a></li>
+                                    <li><a href="compare-variant2.html" class="site-nav">Compare Variant2</a></li>
+                                 </ul>
+                            </li>
+							<li><a href="checkout.html" class="site-nav">Checkout</a></li>
+                            <li><a href="about-us.html" class="site-nav">About Us <span class="lbl nm_label1">New</span> </a></li>
+                            <li><a href="contact-us.html" class="site-nav">Contact Us</a></li>
+                            <li><a href="faqs.html" class="site-nav">FAQs</a></li>
+                            <li><a href="lookbook1.html" class="site-nav">Lookbook<i class="anm anm-angle-right-l"></i></a>
+                              <ul>
+                                <li><a href="lookbook1.html" class="site-nav">Style 1</a></li>
+                                <li><a href="lookbook2.html" class="site-nav">Style 2</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="404.html" class="site-nav">404</a></li>
+                            <li><a href="coming-soon.html" class="site-nav">Coming soon <span class="lbl nm_label1">New</span> </a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                    <!--End Desktop Menu-->
+                </div>
+                <!--Mobile Logo-->
+                <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
+                	<div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                        </a>
+                    </div>
+                </div>
+                <!--Mobile Logo-->
+                <div class="col-4 col-sm-3 col-md-3 col-lg-2">
+                	<div class="site-cart">
+                    	<a href="#;" class="site-header__cart" title="Cart">
+                        	<i class="icon anm anm-bag-l"></i>
+                            <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                        </a>
+                        <!--Minicart Popup-->
+                        <div id="header-cart" class="block block-cart">
+                        	<ul class="mini-products-list">
+                            <!-- ONE -->
+                                <li class="item">
+                                	<a class="product-image" href="#">
+                                    	<img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
+                                    </a>
+                                    <div class="product-details">
+                                    	<a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                        <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+                                        <a class="pName" href="cart.html">Elastic Waist Dress</a>
+                                        <div class="variant-cart">Gray / XXL</div>
+                                        <div class="wrapQtyBtn">
+                                            <div class="qtyField">
+                                            	<span class="label">Qty:</span>
+                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                       	<div class="priceRow">
+                                            <div class="product-price">
+                                                <span class="money">$99.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            <!-- END -->
+                            </ul>
+                            <div class="total">
+                            	<div class="total-in">
+                                	<span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+                                </div>
+                                 <div class="buttonSet text-center">
+                                    <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
+                                    <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--EndMinicart Popup-->
+                    </div>
+                    <div class="site-header__search">
+                    	<button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
+                    </div>
+                </div>
+        	</div>
+        </div>
+    </div>
+    <!--End Header-->
+    <!--Mobile Menu-->
+    <div class="mobile-nav-wrapper" role="navigation">
+		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
+        <ul id="MobileNav" class="mobile-nav">
+        	<li class="lvl1 parent"><a href="index.html">Home</a>
+        </li>
+        	<li class="lvl1 parent"><a href="#">Shop</a>
+        </li>
+        	<li class="lvl1 parent"><a href="product-layout-1.html">Product</a>
+        </li>
+        	<li class="lvl1 parent megamenu"><a href="about-us.html">Pages</a>
+        </li>
+      </ul>
+	</div>
+	<!--End Mobile Menu-->

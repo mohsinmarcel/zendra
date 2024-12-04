@@ -23,7 +23,8 @@ class FunctionController extends Controller
         // $mobiles = Mobile::orderBy('created_at','DESC')->get();
         // $categories = Category::with('products')->whereHas('products')->get();
         // return view ('website.pages.index',compact('categories','sale','featured','mobiles'));
-        return view ('website.pages.coming_soon');
+        // return view ('website.pages.coming_soon');
+        return view ('website.pages.index');
     }
 
     public function productsByCategory($category)
