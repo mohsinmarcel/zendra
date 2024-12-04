@@ -60,8 +60,9 @@
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="index.html">
-                    <img src="   {{ $baseUrl }}/bella_assets/images/logo.svg"
-                        alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
+                    <h2 style="font-weight: bold">ZENDRA GADGETS</h2>
+                    {{-- <img src="   {{ $baseUrl }}/bella_assets/images/logo.svg"
+                        alt="Zendra Gadgets" title="Zendra Gadgets" /> --}}
                 </a>
             </div>
             <!--End Desktop Logo-->
@@ -78,93 +79,28 @@
                     <ul id="siteNav" class="site-nav medium center hidearrow">
                         <li class="lvl1 parent megamenu"><a href="#">Home <i
                                     class="anm anm-angle-down-l"></i></a>
-                            <div class="megamenu style1">
-                                <ul class="grid mmWrapper">
-                                    <li class="grid__item large-up--one-whole">
-                                        <ul class="grid">
-                                            <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#"
-                                                    class="site-nav lvl-1">Home Group 1</a>
-                                                <ul class="subLinks">
-                                                    <li class="lvl-2"><a href="index.html"
-                                                            class="site-nav lvl-2">Home 1 - Classic</a></li>
-                                                    <li class="lvl-2"><a href="home2-default.html"
-                                                            class="site-nav lvl-2">Home 2 - Default</a></li>
-                                                    <li class="lvl-2"><a href="home15-funiture.html"
-                                                            class="site-nav lvl-2">Home 15 - Furniture <span
-                                                                class="lbl nm_label1">New</span></a></li>
-                                                    <li class="lvl-2"><a href="home3-boxed.html"
-                                                            class="site-nav lvl-2">Home 3 - Boxed</a></li>
-                                                    <li class="lvl-2"><a href="home4-fullwidth.html"
-                                                            class="site-nav lvl-2">Home 4 - Fullwidth</a></li>
-                                                    <li class="lvl-2"><a href="home5-cosmetic.html"
-                                                            class="site-nav lvl-2">Home 5 - Cosmetic</a></li>
-                                                    <li class="lvl-2"><a href="home6-modern.html"
-                                                            class="site-nav lvl-2">Home 6 - Modern</a></li>
-                                                    <li class="lvl-2"><a href="home7-shoes.html"
-                                                            class="site-nav lvl-2">Home 7 - Shoes</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="lvl1 parent megamenu"><a href="#">Shop <i
                                     class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style4">
                                 <ul class="grid grid--uniform mmWrapper">
-                                    <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#"
-                                            class="site-nav lvl-1">Shop Pages</a>
+                                    <li class="grid__item lvl-1 col-md-6 col-lg-6"><a href="#"
+                                            class="site-nav lvl-1">Shop By Categories</a>
                                         <ul class="subLinks">
-                                            <li class="lvl-2"><a href="shop-left-sidebar.html"
-                                                    class="site-nav lvl-2">Left Sidebar</a></li>
-                                            <li class="lvl-2"><a href="shop-right-sidebar.html"
-                                                    class="site-nav lvl-2">Right Sidebar</a></li>
-                                            <li class="lvl-2"><a href="shop-fullwidth.html"
-                                                    class="site-nav lvl-2">Fullwidth</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-3.html"
-                                                    class="site-nav lvl-2">3 items per row</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-4.html"
-                                                    class="site-nav lvl-2">4 items per row</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-5.html"
-                                                    class="site-nav lvl-2">5 items per row</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-6.html"
-                                                    class="site-nav lvl-2">6 items per row</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-7.html"
-                                                    class="site-nav lvl-2">7 items per row</a></li>
-                                            <li class="lvl-2"><a href="shop-listview.html"
-                                                    class="site-nav lvl-2">Product Listview</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#"
-                                            class="site-nav lvl-1">Shop Features</a>
-                                        <ul class="subLinks">
-                                            <li class="lvl-2"><a href="shop-left-sidebar.html"
-                                                    class="site-nav lvl-2">Product Countdown <span
-                                                        class="lbl nm_label3">Hot</span></a></li>
-                                            <li class="lvl-2"><a href="shop-right-sidebar.html"
-                                                    class="site-nav lvl-2">Infinite Scrolling</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-3.html"
-                                                    class="site-nav lvl-2">Pagination - Classic</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-6.html"
-                                                    class="site-nav lvl-2">Pagination - Load More</a></li>
-                                            <li class="lvl-2"><a href="product-labels.html"
-                                                    class="site-nav lvl-2">Dynamic Product Labels</a></li>
-                                            <li class="lvl-2"><a href="product-swatches-style.html"
-                                                    class="site-nav lvl-2">Product Swatches <span
-                                                        class="lbl nm_label2">Sale</span></a></li>
-                                            <li class="lvl-2"><a href="product-hover-info.html"
-                                                    class="site-nav lvl-2">Product Hover Info</a></li>
-                                            <li class="lvl-2"><a href="shop-grid-3.html"
-                                                    class="site-nav lvl-2">Product Reviews</a></li>
-                                            <li class="lvl-2"><a href="shop-left-sidebar.html"
-                                                    class="site-nav lvl-2">Discount Label <span
-                                                        class="lbl nm_label1">New</span></a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Air Pods</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Handsfres</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Chargers</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Mobile Covers</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Power Banks</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Cables</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Protectors</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Camera Lens</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Power Banks</a></li>
                                         </ul>
                                     </li>
                                     <li class="grid__item lvl-1 col-md-6 col-lg-6">
                                         <a href="#"><img
-                                                src="   {{ $baseUrl }}/bella_assets/images/megamenu-bg1.jpg"
+                                                src="   {{ $baseUrl }}/bella_assets/images/banner1.jpg"
                                                 alt="" title="" /></a>
                                     </li>
                                 </ul>
