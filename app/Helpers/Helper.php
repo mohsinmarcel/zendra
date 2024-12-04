@@ -86,7 +86,7 @@ class Helper
 
     public static function getBaseUrl() {
         // $baseUrl = 'https://4c67-175-107-200-233.ngrok-free.app';
-         $baseUrl = 'http://zendra_mobiles.test';
+         $baseUrl = 'http://zendra.test';
         return $baseUrl;
     }
 

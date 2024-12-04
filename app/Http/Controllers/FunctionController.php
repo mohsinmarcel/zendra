@@ -18,11 +18,12 @@ class FunctionController extends Controller
 
     public function website()
     {
-        $sale = Product::where('is_on_sale',1)->where('is_featured',0)->orderBy('created_at','DESC')->get();
-        $featured = Product::where('is_featured',1)->where('is_on_sale',0)->orderBy('created_at','DESC')->get();
-        $mobiles = Mobile::orderBy('created_at','DESC')->get();
-        $categories = Category::with('products')->whereHas('products')->get();
-        return view ('website.pages.index',compact('categories','sale','featured','mobiles'));
+        // $sale = Product::where('is_on_sale',1)->where('is_featured',0)->orderBy('created_at','DESC')->get();
+        // $featured = Product::where('is_featured',1)->where('is_on_sale',0)->orderBy('created_at','DESC')->get();
+        // $mobiles = Mobile::orderBy('created_at','DESC')->get();
+        // $categories = Category::with('products')->whereHas('products')->get();
+        // return view ('website.pages.index',compact('categories','sale','featured','mobiles'));
+        return view ('website.pages.coming_soon');
     }
 
     public function productsByCategory($category)

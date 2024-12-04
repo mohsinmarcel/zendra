@@ -8,7 +8,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Sign In | Gadgets</title>
+    <title>Sign In | Zendra Gadgets</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -45,7 +45,7 @@
                                 <div class="col-lg-12">
                                     <div class="p-lg-5 p-4">
                                         <div>
-                                            <p class="text-muted">Sign in to continue to Gadgets.</p>
+                                            <p class="text-muted">Sign in to continue to Zendra Gadgets.</p>
                                         </div>
 
                                         <div class="mt-4">
