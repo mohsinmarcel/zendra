@@ -9,8 +9,8 @@
         <div class="slide">
             <div class="blur-up lazyload bg-size">
                 <img class="blur-up lazyload bg-img"
-                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/belle-banner1.jpg"
-                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/belle-banner1.jpg"
+                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-2.jpg"
+                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-2.jpg"
                     alt="Shop Our New Collection" title="Shop Our New Collection" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">
@@ -27,8 +27,8 @@
         <div class="slide">
             <div class="blur-up lazyload bg-size">
                 <img class="blur-up lazyload bg-img"
-                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/belle-banner2.jpg"
-                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/belle-banner2.jpg"
+                    data-src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-4.jpg"
+                    src="   {{ $baseUrl }}/bella_assets/images/slideshow-banners/zendra-banner-4.jpg"
                     alt="Summer Bikini Collection" title="Summer Bikini Collection" />
                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                     <div class="slideshow__text-content bottom">
