@@ -2,7 +2,6 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
 @php
  $baseUrl = App\Helpers\Helper::getBaseUrl();
-//  dd($baseUrl);
 @endphp
 <head>
     <meta charset="utf-8" />
