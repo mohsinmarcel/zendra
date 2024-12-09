@@ -20,11 +20,22 @@ class Product extends Model
         'slug',
         'is_on_sale',
         'is_featured',
-        'description',  
+        'description',
     ];
 
     public function productAttachments()
     {
         return $this->hasMany(ProductAttachment::class, 'product_id');
+    }
+
+    public function getproductImageAttribute()
+    {
+        if(!empty($this->id))
+        {
+            $attachments = ProductAttachment::where('product_id',$this->id)->get();
+            // dd($attachments);
+            return $attachments[0]->attachment;
+        }
+        return null;
     }
 }

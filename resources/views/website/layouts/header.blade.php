@@ -1,4 +1,7 @@
- <!--Search Form Drawer-->
+@php
+    $categories = App\Helpers\Helper::getCategories();
+@endphp
+<!--Search Form Drawer-->
  <div class="search">
     <div class="search__form">
         <form class="search-bar__form" action="#">
@@ -45,8 +48,8 @@
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al"
                         aria-hidden="true"></i></span>
                 <ul class="customer-links list-inline">
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Create Account</a></li>
+                    {{-- <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Create Account</a></li> --}}
                 </ul>
             </div>
         </div>
@@ -60,9 +63,8 @@
             <!--Desktop Logo-->
             <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                 <a href="index.html">
-                    <h2 style="font-weight: bold">ZENDRA GADGETS</h2>
-                    {{-- <img src="   {{ $baseUrl }}/bella_assets/images/logo.svg"
-                        alt="Zendra Gadgets" title="Zendra Gadgets" /> --}}
+                    {{-- <h2 style="font-weight: bold">ZENDRA GADGETS</h2> --}}
+                    <img src="{{ $baseUrl }}/bella_assets/images/zendra_logo2.png" style="height: 100px; width:120px;" alt="Zendra Gadgets" title="Zendra Gadgets" />
                 </a>
             </div>
             <!--End Desktop Logo-->
@@ -87,15 +89,19 @@
                                     <li class="grid__item lvl-1 col-md-6 col-lg-6"><a href="#"
                                             class="site-nav lvl-1">Shop By Categories</a>
                                         <ul class="subLinks">
-                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Air Pods</a></li>
-                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Handsfres</a></li>
+                                            @if (!empty($categories))
+                                                @foreach ($categories as $category)
+                                                <li class="lvl-2"><a href="#" class="site-nav lvl-2">{{ucWords($category->name)}}</a></li>
+                                                @endforeach
+                                            @endif
+                                            {{-- <li class="lvl-2"><a href="#" class="site-nav lvl-2">Handsfres</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Chargers</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Mobile Covers</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Power Banks</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Cables</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Protectors</a></li>
                                             <li class="lvl-2"><a href="#" class="site-nav lvl-2">Camera Lens</a></li>
-                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Power Banks</a></li>
+                                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Power Banks</a></li> --}}
                                         </ul>
                                     </li>
                                     <li class="grid__item lvl-1 col-md-6 col-lg-6">
@@ -106,7 +112,10 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="lvl1 parent megamenu"><a href="#">Product <i
+                        <li class="lvl1 parent megamenu"><a href="#">Contact Us <i
+                            class="anm anm-angle-down-l"></i></a>
+                </li>
+                        {{-- <li class="lvl1 parent megamenu"><a href="#">Product <i
                                     class="anm anm-angle-down-l"></i></a>
                             <div class="megamenu style2">
                                 <ul class="grid mmWrapper">
@@ -248,7 +257,7 @@
                                 <li><a href="coming-soon.html" class="site-nav">Coming soon <span
                                             class="lbl nm_label1">New</span> </a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!--End Desktop Menu-->

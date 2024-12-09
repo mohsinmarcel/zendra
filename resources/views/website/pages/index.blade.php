@@ -2,6 +2,7 @@
 @section('main-content')
 @php
     $baseUrl = App\Helpers\Helper::getBaseUrl();
+
 @endphp
  <!--Home slider-->
  <div class="slideshow slideshow-wrapper pb-section sliderFull">
@@ -18,7 +19,7 @@
                             <h2 class="h1 mega-title slideshow__title">Shop Our New Collection</h2>
                             <span class="mega-subtitle slideshow__subtitle">From Hight to low, classic or
                                 modern. We have you covered</span>
-                            <span class="btn">Shop now</span>
+                            {{-- <span class="btn">Shop now</span> --}}
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
                             <h2 class="h1 mega-title slideshow__title">Summer  Collection</h2>
                             <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
                                 only</span>
-                            <span class="btn">Shop now</span>
+                            {{-- <span class="btn">Shop now</span> --}}
                         </div>
                     </div>
                 </div>
@@ -1275,74 +1276,7 @@
 <!--Collection Tab slider-->
 
 <!--Collection Box slider-->
-<div class="collection-box section">
-    <div class="container-fluid">
-        <div class="collection-grid">
-            <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="   {{ $baseUrl }}/bella_assets/images/collection/fashion.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/fashion.jpg"
-                        alt="Fashion" class="blur-up lazyload" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Fashion</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img class="blur-up lazyload"
-                        data-src="   {{ $baseUrl }}/bella_assets/images/collection/cosmetic.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/cosmetic.jpg"
-                        alt="Cosmetic" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Cosmetic</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="collection-grid-item blur-up lazyloaded">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="   {{ $baseUrl }}/bella_assets/images/collection/bag.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/bag.jpg"
-                        alt="Bag" class="blur-up lazyload" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Bag</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="   {{ $baseUrl }}/bella_assets/images/collection/accessories.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/accessories.jpg"
-                        alt="Accessories" class="blur-up lazyload" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Accessories
-                        </h3>
-                    </div>
-                </a>
-            </div>
-            <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="   {{ $baseUrl }}/bella_assets/images/collection/shoes.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/shoes.jpg"
-                        alt="Shoes" class="blur-up lazyload" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Shoes</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="   {{ $baseUrl }}/bella_assets/images/collection/jewellry.jpg"
-                        src="   {{ $baseUrl }}/bella_assets/images/collection/jewellry.jpg"
-                        alt="Jewellry" class="blur-up lazyload" />
-                    <div class="collection-grid-item__title-wrapper">
-                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Jewellry</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--End Collection Box slider--> --}}
 
 <!--Logo Slider-->
@@ -1383,10 +1317,38 @@
 <!--End Logo Slider-->
 {{-- HIDDEN SECTIONS --}}
 
+@if (!empty($categories)  && count($categories) > 0)
+<div class="collection-box section">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="section-header text-center">
+                <h2 class="h2">Shop By Categories</h2>
+                <p>You Can Also Shop By Selecting Categories Where All Products Are Listed</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="collection-grid">
+            @foreach ($categories as $category)
+            <div class="collection-grid-item">
+                <a href="collection-page.html" class="collection-grid-item__link">
+                    <img data-src="{{$baseUrl}}/{{$category->image}}"
+                        src="{{$baseUrl}}/{{$category->image}}"
+                        alt="category" class="blur-up lazyload" />
+                    <div class="collection-grid-item__title-wrapper">
+                        <h3 class="collection-grid-item__title btn btn--secondary no-border">{{ucWords($category->name)}}</h3>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+
+        </div>
+    </div>
+</div>
+@endif
 
 
-
-
+@if (!empty($featured)  && count($featured) > 0)
 <!--Featured Product-->
 <div class="product-rows section">
     <div class="container">
@@ -1400,26 +1362,28 @@
         </div>
         <div class="grid-products">
             <div class="row">
+                @foreach ($featured as $feature)
+                {{-- @dump($feature->product_image) --}}
                 <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                     <div class="grid-view_image">
                         <!-- start product image -->
                         <a href="product-accordion.html" class="grid-view-item__link">
                             <!-- image -->
                             <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1.jpg"
+                                data-src="{{ $baseUrl }}/{{$feature->product_image}}"
+                                src="{{ $baseUrl }}/{{$feature->product_image}}"
                                 alt="image" title="product">
                             <!-- End image -->
                             <!-- Hover image -->
                             <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
+                                data-src="{{ $baseUrl }}/{{$feature->product_image}}"
+                                src="{{ $baseUrl }}/{{$feature->product_image}}"
                                 alt="image" title="product">
                             <!-- End hover image -->
                             <!-- product label -->
-                            <div class="product-labels rectangular"><span
+                            {{-- <div class="product-labels rectangular"><span
                                     class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
+                                    class="lbl pr-label1">new</span></div> --}}
                             <!-- End product label -->
                         </a>
                         <!-- end product image -->
@@ -1427,23 +1391,23 @@
                         <div class="product-details hoverDetails text-center mobile">
                             <!-- product name -->
                             <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
+                                <a href="product-accordion.html">{{ucWords($feature->name)}}</a>
                             </div>
                             <!-- End product name -->
                             <!-- product price -->
                             <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
+                                @if ($feature->discounted_price > 0)
+                                <span class="old-price">Rs: {{$feature->price}}</span>
+                                <span class="price">Rs: {{$feature->discounted_price}}</span>
+                                @else
+                                <span class="price">Rs: {{$feature->price}}</span>
+                                @endif
+
                             </div>
                             <!-- End product price -->
 
                             <!-- product button -->
                             <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
                                 <!-- Start product button -->
                                 <form class="variants add" action="#"
                                     onclick="window.location.href='cart.html'"method="post">
@@ -1455,520 +1419,61 @@
                                         <i class="icon anm anm-heart-l"></i>
                                     </a>
                                 </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
                             </div>
                             <!-- end product button -->
                         </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
                         <!-- End product details -->
                     </div>
                 </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
+                @endforeach
 
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
 
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
 <!--End Featured Product-->
+@endif
 
+
+
+
+@if (!empty($sale) && count($sale) > 0)
 <!--Sale Product-->
 <div class="product-rows section">
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="section-header text-center">
-                    <h2 class="h2">On Sale Products</h2>
-                    <p>Browse Our Sale Products And Enjoy Amazing Discounts</p>
+                    <h2 class="h2">Our Sale Products</h2>
+                    <p>Our Sale Products With Special Discounts</p>
                 </div>
             </div>
         </div>
         <div class="grid-products">
             <div class="row">
+                @foreach ($sale as $sale)
+                {{-- @dump($sale->product_image) --}}
                 <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                     <div class="grid-view_image">
                         <!-- start product image -->
                         <a href="product-accordion.html" class="grid-view-item__link">
                             <!-- image -->
                             <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
+                                data-src="{{ $baseUrl }}/{{$sale->product_image}}"
+                                src="{{ $baseUrl }}/{{$sale->product_image}}"
                                 alt="image" title="product">
                             <!-- End image -->
                             <!-- Hover image -->
                             <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
+                                data-src="{{ $baseUrl }}/{{$sale->product_image}}"
+                                src="{{ $baseUrl }}/{{$sale->product_image}}"
                                 alt="image" title="product">
                             <!-- End hover image -->
                             <!-- product label -->
-                            <div class="product-labels rectangular"><span
+                            {{-- <div class="product-labels rectangular"><span
                                     class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
+                                    class="lbl pr-label1">new</span></div> --}}
                             <!-- End product label -->
                         </a>
                         <!-- end product image -->
@@ -1976,23 +1481,23 @@
                         <div class="product-details hoverDetails text-center mobile">
                             <!-- product name -->
                             <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
+                                <a href="product-accordion.html">{{ucWords($sale->name)}}</a>
                             </div>
                             <!-- End product name -->
                             <!-- product price -->
                             <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
+                                @if ($sale->discounted_price > 0)
+                                <span class="old-price">Rs: {{$sale->price}}</span>
+                                <span class="price">Rs: {{$sale->discounted_price}}</span>
+                                @else
+                                <span class="price">Rs: {{$sale->price}}</span>
+                                @endif
+
                             </div>
                             <!-- End product price -->
 
                             <!-- product button -->
                             <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
                                 <!-- Start product button -->
                                 <form class="variants add" action="#"
                                     onclick="window.location.href='cart.html'"method="post">
@@ -2004,486 +1509,109 @@
                                         <i class="icon anm anm-heart-l"></i>
                                     </a>
                                 </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
                             </div>
                             <!-- end product button -->
                         </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
                         <!-- End product details -->
                     </div>
                 </div>
-                <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
+                @endforeach
 
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
 
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div><div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                    <div class="grid-view_image">
-                        <!-- start product image -->
-                        <a href="product-accordion.html" class="grid-view-item__link">
-                            <!-- image -->
-                            <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15.jpg"
-                                alt="image" title="product">
-                            <!-- End image -->
-                            <!-- Hover image -->
-                            <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                alt="image" title="product">
-                            <!-- End hover image -->
-                            <!-- product label -->
-                            <div class="product-labels rectangular"><span
-                                    class="lbl on-sale">-16%</span> <span
-                                    class="lbl pr-label1">new</span></div>
-                            <!-- End product label -->
-                        </a>
-                        <!-- end product image -->
-                        <!--start product details -->
-                        <div class="product-details hoverDetails text-center mobile">
-                            <!-- product name -->
-                            <div class="product-name">
-                                <a href="product-accordion.html">Edna Dress</a>
-                            </div>
-                            <!-- End product name -->
-                            <!-- product price -->
-                            <div class="product-price">
-                                <span class="old-price">$500.00</span>
-                                <span class="price">$600.00</span>
-                            </div>
-                            <!-- End product price -->
-
-                            <!-- product button -->
-                            <div class="button-set">
-                                <a href="javascript:void(0)" title="Quick View"
-                                    class="quick-view-popup quick-view" data-toggle="modal"
-                                    data-target="#content_quickview">
-                                    <i class="icon anm anm-search-plus-r"></i>
-                                </a>
-                                <!-- Start product button -->
-                                <form class="variants add" action="#"
-                                    onclick="window.location.href='cart.html'"method="post">
-                                    <button class="btn cartIcon btn-addto-cart" type="button"
-                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                </form>
-                                <div class="wishlist-btn">
-                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                        <i class="icon anm anm-heart-l"></i>
-                                    </a>
-                                </div>
-                                <div class="compare-btn">
-                                    <a class="compare add-to-compare" href="compare.html"
-                                        title="Add to Compare">
-                                        <i class="icon anm anm-random-r"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- end product button -->
-                        </div>
-                        <!-- Variant -->
-                        {{-- <ul class="swatches text-center">
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
-                                    alt="image" /></li>
-                            <li class="swatch medium rounded"><img
-                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
-                                    alt="image" /></li>
-                        </ul> --}}
-                        <!-- End Variant -->
-                        <!-- End product details -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
-<!--End Sale Product-->
+<!--End Featured Product-->
+@endif
+
+@if (!empty($mobiles) && count($mobiles) > 0)
+<!--Sale Product-->
+<div class="product-rows section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="h2">Mobile Phones</h2>
+                    <p>We Also Deals in the mobile phones which are in the best condition</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-products">
+            <div class="row">
+                @foreach ($mobiles as $mobile)
+                {{-- @dump($mobile->encoded_images) --}}
+                {{-- @dump($sale->product_image) --}}
+                <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
+                    <div class="grid-view_image">
+                        <!-- start product image -->
+                        <a href="product-accordion.html" class="grid-view-item__link">
+                            <!-- image -->
+                            <img class="grid-view-item__image primary blur-up lazyload"
+                                data-src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                alt="image" title="product">
+                            <!-- End image -->
+                            <!-- Hover image -->
+                            <img class="grid-view-item__image hover blur-up lazyload"
+                                data-src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                alt="image" title="product">
+                            <!-- End hover image -->
+                            <!-- product label -->
+                            {{-- <div class="product-labels rectangular"><span
+                                    class="lbl on-sale">-16%</span> <span
+                                    class="lbl pr-label1">new</span></div> --}}
+                            <!-- End product label -->
+                        </a>
+                        <!-- end product image -->
+                        <!--start product details -->
+                        <div class="product-details hoverDetails text-center mobile">
+                            <!-- product name -->
+                            <div class="product-name">
+                                <a href="product-accordion.html">{{ucWords($sale->name)}}</a>
+                            </div>
+                            <!-- End product name -->
+                            <!-- product price -->
+                            <div class="product-price">
+                                @if ($sale->discounted_price > 0)
+                                <span class="old-price">Rs: {{$sale->price}}</span>
+                                <span class="price">Rs: {{$sale->discounted_price}}</span>
+                                @else
+                                <span class="price">Rs: {{$sale->price}}</span>
+                                @endif
+
+                            </div>
+                            <!-- End product price -->
+
+                            <!-- product button -->
+                            <div class="button-set">
+                                <!-- Start product button -->
+                                <form class="variants add" action="#"
+                                    onclick="window.location.href='cart.html'"method="post">
+                                    <button class="btn cartIcon btn-addto-cart" type="button"
+                                        tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                </form>
+                                <div class="wishlist-btn">
+                                    <a class="wishlist add-to-wishlist" href="wishlist.html">
+                                        <i class="icon anm anm-heart-l"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- end product button -->
+                        </div>
+                        <!-- End product details -->
+                    </div>
+                </div>
+                @endforeach
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Featured Product-->
+@endif
 
 <!--Latest Blog-->
 <div class="latest-blog section pt-0">
@@ -2499,19 +1627,18 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="wrap-blog">
                     <a href="blog-left-sidebar.html" class="article__grid-image">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/blog/post-img1.jpg"
+                        <img src="   {{ $baseUrl }}/bella_assets/images/male.jpg"
                             alt="It's all about how you wear" title="It's all about how you wear"
                             class="blur-up lazyloaded" />
                     </a>
                     <div class="article__grid-meta article__grid-meta--has-image">
                         <div class="wrap-blog-inner">
                             <h2 class="h3 article__title">
-                                <a href="blog-left-sidebar.html">It's all about how you wear</a>
+                                <a href="blog-left-sidebar.html">High-Quality Accessories at Great Prices!</a>
                             </h2>
-                            <span class="article__date">May 02, 2017</span>
+                            <span class="article__date">{{date('d M , Y')}}</span>
                             <div class="rte article__grid-excerpt">
-                                I must explain to you how all this mistaken idea of denouncing pleasure and
-                                praising pain was born and I will give you a complete account...
+                                I recently purchased a phone case and screen protector from this website, and I'm thoroughly impressed. The quality of the products exceeded my expectations, and the prices were very reasonable. The checkout process was smooth, and the delivery was prompt. Highly recommend this site for anyone looking for reliable mobile accessories!
                             </div>
                         </div>
                     </div>
@@ -2520,19 +1647,18 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                 <div class="wrap-blog">
                     <a href="blog-left-sidebar.html" class="article__grid-image">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/blog/post-img2.jpg"
+                        <img src="   {{ $baseUrl }}/bella_assets/images/female.jpg"
                             alt="27 Days of Spring Fashion Recap"
                             title="27 Days of Spring Fashion Recap" class="blur-up lazyloaded" />
                     </a>
                     <div class="article__grid-meta article__grid-meta--has-image">
                         <div class="wrap-blog-inner">
                             <h2 class="h3 article__title">
-                                <a href="blog-right-sidebar.html">27 Days of Spring Fashion Recap</a>
+                                <a href="blog-right-sidebar.html">Stylish and Durable Accessories!</a>
                             </h2>
-                            <span class="article__date">May 02, 2017</span>
+                            <span class="article__date">{{date('d M , Y')}}</span>
                             <div class="rte article__grid-excerpt">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab...
+                                I ordered a phone cover and a pop socket, and I absolutely love them! The designs are super chic, and the durability is fantastic. I’ve already received compliments on my phone case. Shopping was easy, and the items arrived on time. I’ll definitely shop here again for my accessories!
                             </div>
                             {{-- <ul class="list--inline article__meta-buttons">
                                 <li><a href="blog-article.html">Read more</a></li>
@@ -2546,7 +1672,7 @@
 </div>
 <!--End Latest Blog-->
 
-<!--Store Feature-->
+{{-- <!--Store Feature-->
 <div class="store-feature section">
     <div class="container">
         <div class="row">
@@ -2577,5 +1703,5 @@
         </div>
     </div>
 </div>
-<!--End Store Feature-->
+<!--End Store Feature--> --}}
 @endsection
