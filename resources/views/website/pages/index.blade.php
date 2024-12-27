@@ -2,7 +2,7 @@
 @section('main-content')
 @php
     $baseUrl = App\Helpers\Helper::getBaseUrl();
-
+    $liveBaseUrl = App\Helpers\Helper::liveBaseUrl();
 @endphp
  <!--Home slider-->
  <div class="slideshow slideshow-wrapper pb-section sliderFull">
@@ -73,14 +73,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image1.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image1-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                             <!-- product label -->
@@ -146,22 +146,22 @@
                                         <!-- Variant -->
                                         <ul class="swatches">
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant1.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant1.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant2.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant4.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant5.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant5.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant6.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant6.jpg"
                                                     alt="image" /></li>
                                         </ul>
                                         <!-- End Variant -->
@@ -175,14 +175,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image2.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image2.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image2-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image2-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image2-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -238,16 +238,16 @@
                                         <!-- Variant -->
                                         <ul class="swatches">
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2-1.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant2-1.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2-2.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant2-2.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2-3.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant2-3.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant2-4.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant2-4.jpg"
                                                     alt="image" /></li>
                                         </ul>
                                         <!-- End Variant -->
@@ -261,14 +261,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image3.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image3.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image3-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                             <!-- product label -->
@@ -329,16 +329,16 @@
                                         <!-- Variant -->
                                         <ul class="swatches">
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-1.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-1.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-2.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-2.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-3.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-3.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-4.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-4.jpg"
                                                     alt="image" /></li>
                                         </ul>
                                         <!-- End Variant -->
@@ -352,14 +352,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image4.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image4.jpg"
                                                 alt="image" title="product" />
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image4-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image4-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image4-1.jpg"
                                                 alt="image" title="product" />
                                             <!-- End hover image -->
                                             <!-- product label -->
@@ -422,16 +422,16 @@
                                         <!-- Variant -->
                                         <ul class="swatches">
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4-1.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant4-1.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4-2.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant4-2.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4-3.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant4-3.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant4-4.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant4-4.jpg"
                                                     alt="image" /></li>
                                         </ul>
                                         <!-- End Variant -->
@@ -445,14 +445,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image5.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image5.jpg"
                                                 alt="image" title="product" />
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image5-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image5-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image5-1.jpg"
                                                 alt="image" title="product" />
                                             <!-- End hover image -->
                                             <!-- product label -->
@@ -514,16 +514,16 @@
                                         <!-- Variant -->
                                         <ul class="swatches">
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-1.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-1.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-2.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-2.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-3.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-3.jpg"
                                                     alt="image" /></li>
                                             <li class="swatch medium rounded"><img
-                                                    src="   {{ $baseUrl }}/bella_assets/images/product-images/variant3-4.jpg"
+                                                    src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/variant3-4.jpg"
                                                     alt="image" /></li>
                                         </ul>
                                         <!-- End Variant -->
@@ -541,14 +541,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image6.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image6.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image6-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image6-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image6-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                             <!-- product label -->
@@ -618,14 +618,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image7.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image7.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image7.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image7.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image7-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image7-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image7-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image7-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -689,14 +689,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image8.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image8.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image8.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image8.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image8-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image8-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image8-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image8-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -762,14 +762,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image9.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image9.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image9.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image9.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image9-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image9-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image9-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image9-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -835,14 +835,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image10.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image10.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image10.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image10.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image10-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image10-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image10-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image10-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -911,14 +911,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image11.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image11.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image11-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -984,14 +984,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image12.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image12.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image12-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image12-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image12-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -1055,14 +1055,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image13.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image13.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image13-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image13-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image13-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -1128,14 +1128,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image14.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image14.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image14-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image14-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image14-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -1200,14 +1200,14 @@
                                         <a href="short-description.html">
                                             <!-- image -->
                                             <img class="primary blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image15.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image15.jpg"
                                                 alt="image" title="product">
                                             <!-- End image -->
                                             <!-- Hover image -->
                                             <img class="hover blur-up lazyload"
-                                                data-src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15-1.jpg"
-                                                src="   {{ $baseUrl }}/bella_assets/images/product-images/product-image15-1.jpg"
+                                                data-src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image15-1.jpg"
+                                                src="   {{ $liveBaseUrl }}/bella_assets/images/product-images/product-image15-1.jpg"
                                                 alt="image" title="product">
                                             <!-- End hover image -->
                                         </a>
@@ -1286,27 +1286,27 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="logo-bar">
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo1.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo1.png"
                             alt="" title="" />
                     </div>
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo2.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo2.png"
                             alt="" title="" />
                     </div>
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo3.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo3.png"
                             alt="" title="" />
                     </div>
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo4.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo4.png"
                             alt="" title="" />
                     </div>
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo5.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo5.png"
                             alt="" title="" />
                     </div>
                     <div class="logo-bar__item">
-                        <img src="   {{ $baseUrl }}/bella_assets/images/logo/brandlogo6.png"
+                        <img src="   {{ $liveBaseUrl }}/bella_assets/images/logo/brandlogo6.png"
                             alt="" title="" />
                     </div>
                 </div>
@@ -1332,8 +1332,8 @@
             @foreach ($categories as $category)
             <div class="collection-grid-item">
                 <a href="collection-page.html" class="collection-grid-item__link">
-                    <img data-src="{{$baseUrl}}/{{$category->image}}"
-                        src="{{$baseUrl}}/{{$category->image}}"
+                    <img data-src="{{$liveBaseUrl}}/{{$category->image}}"
+                        src="{{$liveBaseUrl}}/{{$category->image}}"
                         alt="category" class="blur-up lazyload" />
                     <div class="collection-grid-item__title-wrapper">
                         <h3 class="collection-grid-item__title btn btn--secondary no-border">{{ucWords($category->name)}}</h3>
@@ -1370,14 +1370,14 @@
                         <a href="product-accordion.html" class="grid-view-item__link">
                             <!-- image -->
                             <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$feature->product_image}}"
-                                src="{{ $baseUrl }}/{{$feature->product_image}}"
+                                data-src="{{ $liveBaseUrl }}/{{$feature->product_image}}"
+                                src="{{ $liveBaseUrl }}/{{$feature->product_image}}"
                                 alt="image" title="product">
                             <!-- End image -->
                             <!-- Hover image -->
                             <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$feature->product_image}}"
-                                src="{{ $baseUrl }}/{{$feature->product_image}}"
+                                data-src="{{ $liveBaseUrl }}/{{$feature->product_image}}"
+                                src="{{ $liveBaseUrl }}/{{$feature->product_image}}"
                                 alt="image" title="product">
                             <!-- End hover image -->
                             <!-- product label -->
@@ -1460,14 +1460,14 @@
                         <a href="product-accordion.html" class="grid-view-item__link">
                             <!-- image -->
                             <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$sale->product_image}}"
-                                src="{{ $baseUrl }}/{{$sale->product_image}}"
+                                data-src="{{ $liveBaseUrl }}/{{$sale->product_image}}"
+                                src="{{ $liveBaseUrl }}/{{$sale->product_image}}"
                                 alt="image" title="product">
                             <!-- End image -->
                             <!-- Hover image -->
                             <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$sale->product_image}}"
-                                src="{{ $baseUrl }}/{{$sale->product_image}}"
+                                data-src="{{ $liveBaseUrl }}/{{$sale->product_image}}"
+                                src="{{ $liveBaseUrl }}/{{$sale->product_image}}"
                                 alt="image" title="product">
                             <!-- End hover image -->
                             <!-- product label -->
@@ -1548,14 +1548,14 @@
                         <a href="product-accordion.html" class="grid-view-item__link">
                             <!-- image -->
                             <img class="grid-view-item__image primary blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
-                                src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                data-src="{{ $liveBaseUrl }}/{{$mobile->encoded_images[0]}}"
+                                src="{{ $liveBaseUrl }}/{{$mobile->encoded_images[0]}}"
                                 alt="image" title="product">
                             <!-- End image -->
                             <!-- Hover image -->
                             <img class="grid-view-item__image hover blur-up lazyload"
-                                data-src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
-                                src="{{ $baseUrl }}/{{$mobile->encoded_images[0]}}"
+                                data-src="{{ $liveBaseUrl }}/{{$mobile->encoded_images[0]}}"
+                                src="{{ $liveBaseUrl }}/{{$mobile->encoded_images[0]}}"
                                 alt="image" title="product">
                             <!-- End hover image -->
                             <!-- product label -->

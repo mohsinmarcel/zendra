@@ -48,8 +48,9 @@
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al"
                         aria-hidden="true"></i></span>
                 <ul class="customer-links list-inline">
-                    {{-- <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Create Account</a></li> --}}
+                    <li><a href="login.html">Login</a></li>
+                    |
+                    <li><a href="register.html">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -79,7 +80,7 @@
                 <!--Desktop Menu-->
                 <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                     <ul id="siteNav" class="site-nav medium center hidearrow">
-                        <li class="lvl1 parent megamenu"><a href="#">Home <i
+                        <li class="lvl1 parent megamenu"><a href="{{route('website')}}">Home <i
                                     class="anm anm-angle-down-l"></i></a>
                         </li>
                         <li class="lvl1 parent megamenu"><a href="#">Shop <i

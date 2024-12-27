@@ -90,6 +90,12 @@ class Helper
         return $baseUrl;
     }
 
+    public static function liveBaseUrl() {
+        // $baseUrl = 'https://4c67-175-107-200-233.ngrok-free.app';
+         $baseUrl = 'https://zendragadgets.com';
+        return $baseUrl;
+    }
+
     public static function getCategories() {
         $categories = Category::all();
         return $categories;
