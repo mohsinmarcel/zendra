@@ -33,27 +33,38 @@
         <div id="page-content">
            @yield('main-content')
         </div>
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-
         <!-- Modal -->
         <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Register</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                ...
+                    <form id="registrationForm" >
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Enter Name</label>
+                                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Your Name" name="name">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="">Enter Phone Number</label>
+                                    <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone Number" name="phone">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="password">Enter Password</label>
+                                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Enter password" name="password">
+                                    <small id="passwordHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+                                </div>
+                        </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="userRegister()">Register</button>
                 </div>
             </div>
             </div>
@@ -63,18 +74,31 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                ...
+                    <form id="loginForm" >
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">Enter Phone Number</label>
+                                    <input type="number" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone Number" name="phone">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="password">Enter Password</label>
+                                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" placeholder="Enter password" name="password">
+                                    <small id="passwordHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+                                </div>
+                        </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="userLogin()"this >Login</button>
                 </div>
+            </form>
             </div>
             </div>
         </div>
