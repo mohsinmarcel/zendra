@@ -33,6 +33,51 @@
         <div id="page-content">
            @yield('main-content')
         </div>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
         <!--End Body Content-->
 
        @include('website.layouts.footer')
@@ -271,6 +316,7 @@
         <script src="   {{ $baseUrl }}/bella_assets/js/main.js"></script>
         <!--For Newsletter Popup-->
         <script>
+
             jQuery(document).ready(function() {
                 jQuery('.closepopup').on('click', function() {
                     jQuery('#popup-container').fadeOut();
@@ -307,11 +353,17 @@
                     jQuery('#modalOverly').hide();
                 }
             });
+
+            function openLoginModal() {
+                jQuery('#LoginModal').modal('show');
+            }
+
+            function openRegisterModal() {
+                jQuery('#RegisterModal').modal('show');
+            }
+
         </script>
         <!--End For Newsletter Popup-->
     </div>
 </body>
-
-<!-- belle/index.html   11 Nov 2019 12:20:55 GMT -->
-
 </html>

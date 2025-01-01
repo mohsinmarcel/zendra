@@ -1,5 +1,9 @@
 @extends('website.layouts.master')
 @section('main-content')
+@php
+    $baseUrl = App\Helpers\Helper::getBaseUrl();
+    $liveBaseUrl = App\Helpers\Helper::liveBaseUrl();
+@endphp
     <div class="body-content outer-top-vs" id="top-banner-and-menu">
         <div class="container">
             <div id="product-tabs-slider" class="outer-top-vs">
@@ -19,7 +23,7 @@
                                                     <div class="image">
                                                         <a href="{{ route('products.detail', $item->slug) }}">
                                                             {{-- <img src="{{ asset($item->productAttachments[0]->attachment) }}" alt=""> --}}
-                                                            <img src="{{ asset($item->productAttachments[0]->attachment) }}" alt="" class="hover-image">
+                                                            <img src="{{$liveBaseUrl}}/{{ $item->productAttachments[0]->attachment }}" alt="" class="hover-image">
                                                         </a>
                                                     </div>
                                                 </div>

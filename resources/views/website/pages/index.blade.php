@@ -1331,7 +1331,7 @@
         <div class="collection-grid">
             @foreach ($categories as $category)
             <div class="collection-grid-item">
-                <a href="collection-page.html" class="collection-grid-item__link">
+                <a href="{{route('products.by.category',$category->slug)}}" class="collection-grid-item__link">
                     <img data-src="{{$liveBaseUrl}}/{{$category->image}}"
                         src="{{$liveBaseUrl}}/{{$category->image}}"
                         alt="category" class="blur-up lazyload" />

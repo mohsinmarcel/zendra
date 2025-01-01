@@ -48,9 +48,9 @@
                 <span class="user-menu d-block d-lg-none"><i class="anm anm-user-al"
                         aria-hidden="true"></i></span>
                 <ul class="customer-links list-inline">
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#" onclick="openLoginModal(this)">Login</a></li>
                     |
-                    <li><a href="register.html">Sign Up</a></li>
+                    <li><a href="#" onclick="openRegisterModal(this)">Sign Up</a></li>
                 </ul>
             </div>
         </div>
