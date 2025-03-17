@@ -51,7 +51,7 @@ class UserController extends Controller
 
     public function registerProcess(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',

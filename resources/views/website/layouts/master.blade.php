@@ -145,42 +145,52 @@
                 jQuery('#RegisterModal').modal('show');
             }
 
-            // jQuery(document).ready(function() {
-            //     jQuery('.closepopup').on('click', function() {
-            //         jQuery('#popup-container').fadeOut();
-            //         jQuery('#modalOverly').fadeOut();
-            //     });
-
-            //     var visits = jQuery.cookie('visits') || 0;
-            //     visits++;
-            //     jQuery.cookie('visits', visits, {
-            //         expires: 1,
-            //         path: '/'
-            //     });
-            //     console.debug(jQuery.cookie('visits'));
-            //     if (jQuery.cookie('visits') > 1) {
-            //         jQuery('#modalOverly').hide();
-            //         jQuery('#popup-container').hide();
-            //     } else {
-            //         var pageHeight = jQuery(document).height();
-            //         jQuery('<div id="modalOverly"></div>').insertBefore('body');
-            //         jQuery('#modalOverly').css("height", pageHeight);
-            //         jQuery('#popup-container').show();
-            //     }
-            //     if (jQuery.cookie('noShowWelcome')) {
-            //         jQuery('#popup-container').hide();
-            //         jQuery('#active-popup').hide();
-            //     }
-            // });
-
-            // jQuery(document).mouseup(function(e) {
-            //     var container = jQuery('#popup-container');
-            //     if (!container.is(e.target) && container.has(e.target).length === 0) {
-            //         container.fadeOut();
-            //         jQuery('#modalOverly').fadeIn(200);
-            //         jQuery('#modalOverly').hide();
-            //     }
-            // });
+            function userRegister() {
+                let formData = new FormData($('#loginForm')[0]);
+                axios.post('/admin/login/process', formData)
+                    .then(function(response) {
+                        if (response.data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Successful',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            }).then(() => {
+                                window.location.href = '{{ route('admin.dashboard') }}';
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+                        if (error.response.data.key === 'userNotExist') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'User Not Exist',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+                        } else if (error.response.data.key === 'unverified') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Account Unverified <br> Please Contact Your provider',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+                            invalid
+                        } else if (error.response.data.key === 'invalid') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Invalid Credentials',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+                        } else {
+                            $.each(error.response.data.message, function(k, v) {
+                                $('input[name="' + k + '"]').addClass("has-error");
+                                $('input[name="' + k + '"]').after("<span class='text-danger'>" + v[0] + "</span>");
+                            });
+                        }
+                    });
+            }
         </script>
         <!--End For Newsletter Popup-->
     </div>
