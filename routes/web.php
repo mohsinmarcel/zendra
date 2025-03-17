@@ -58,7 +58,7 @@ Route::group(['prefix' => 'user', 'middleware' => 'user.guest'], function () {
     Route::get('/login', [UserController::class, 'login'])->name('user.login');
     Route::post('/login/process', [UserController::class, 'loginProcess'])->name('user.login.process');
     Route::get('/register', [UserController::class, 'register'])->name('user.register');
-    Route::get('/register/process', [UserController::class, 'registerProcess'])->name('user.register.process');
+    Route::post('/register/process', [UserController::class, 'registerProcess'])->name('user.register.process');
 
 });
 

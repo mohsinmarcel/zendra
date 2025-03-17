@@ -2,6 +2,8 @@
 <html class="no-js" lang="en">
 @php
     $baseUrl = App\Helpers\Helper::getBaseUrl();
+    $user = session('user');
+    // dd($user);
 @endphp
 
 <!-- belle/index.html   11 Nov 2019 12:16:10 GMT -->
@@ -51,17 +53,17 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="register_name">Enter Name</label>
-                                        <input type="text" class="form-control" id="register_name"
+                                        <input type="text" class="form-control"
                                             placeholder="Enter Your Name" name="name">
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="register_phone">Enter Phone Number</label>
-                                        <input type="number" class="form-control" id="register_phone"
-                                            placeholder="Enter phone Number" name="phone">
+                                        <input type="number" class="form-control"
+                                            placeholder="Enter phone Number" name="mobile">
                                     </div>
                                     <div class="form-group mt-3">
                                         <label for="register_password">Enter Password</label>
-                                        <input type="password" class="form-control" id="register_password"
+                                        <input type="password" class="form-control"
                                             placeholder="Enter password" name="password">
                                         <small class="form-text text-muted">We'll never share your information with
                                             anyone else.</small>
@@ -90,7 +92,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="loginForm">
+                        <form id="loginFormWebsite">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -134,6 +136,10 @@
         <script src="{{ $baseUrl }}/bella_assets/js/popper.min.js"></script>
         <script src="{{ $baseUrl }}/bella_assets/js/lazysizes.js"></script>
         <script src="{{ $baseUrl }}/bella_assets/js/main.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+        <script src="{{ $baseUrl }}/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+        <script src="{{ $baseUrl }}/assets/js/pages/sweetalerts.init.js"></script>
         <!--For Newsletter Popup-->
         <script>
             function openLoginModal() {
@@ -145,12 +151,53 @@
                 jQuery('#RegisterModal').modal('show');
             }
 
-            function userLogin()
-            {
-                console.log('lgoniinnk')
+            function userLogin() {
+                let formData = new FormData($('#loginFormWebsite')[0]);
+                axios.post('/user/login/process', formData)
+                    .then(function(response) {
+                        if (response.data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Login Successful',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+
+                            $.each(error.response.data.message, function(k, v) {
+                                $('input[name="' + k + '"]').addClass("has-error");
+                                $('input[name="' + k + '"]').after("<span class='text-danger'>" + v[0] + "</span>");
+                            });
+
+                    });
             }
 
-            
+            function userRegister() {
+                let formData = new FormData($('#registrationForm')[0]);
+                axios.post('/user/register/process', formData)
+                    .then(function(response) {
+                        if (response.data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registration Successful',
+                                showConfirmButton: false,
+                                timer: 1500,
+                            }).then(() => {
+                                window.location.reload();
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+
+                            $.each(error.response.data.message, function(k, v) {
+                                $('input[name="' + k + '"]').addClass("has-error");
+                                $('input[name="' + k + '"]').after("<span class='text-danger'>" + v[0] + "</span>");
+                            });
+
+                    });
+            }
         </script>
         <!--End For Newsletter Popup-->
     </div>

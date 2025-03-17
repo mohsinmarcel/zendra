@@ -15,10 +15,10 @@ class UserRedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth('user')->check())
-        {
-            return redirect()->route('user.dashboard');
-        }
+        // if (auth('user')->check())
+        // {
+        //     return redirect()->route('user.dashboard');
+        // }
         return $next($request);
     }
 }
