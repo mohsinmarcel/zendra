@@ -52,7 +52,7 @@
                 <ul class="customer-links list-inline">
                     <li><a>Hello, {{$user['name']}}</a></li>
                     |
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="{{route('user.logout')}}">Logout</a></li>
                 </ul>
                 @else
                 <ul class="customer-links list-inline">

@@ -66,6 +66,8 @@ Route::group(['prefix' => 'user', 'middleware' => 'user.guest'], function () {
 Route::get('/', [FunctionController::class, 'website'])->name('website');
 Route::get('/products/{category}', [FunctionController::class, 'productsByCategory'])->name('products.by.category');
 Route::get('/products/detail/{slug}', [FunctionController::class, 'productDetail'])->name('products.detail');
+Route::get('/user/logout', [UserController::class, 'userLogout'])->name('user.logout');
+
 
 
 
