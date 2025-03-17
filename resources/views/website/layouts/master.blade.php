@@ -145,52 +145,12 @@
                 jQuery('#RegisterModal').modal('show');
             }
 
-            function userRegister() {
-                let formData = new FormData($('#loginForm')[0]);
-                axios.post('/admin/login/process', formData)
-                    .then(function(response) {
-                        if (response.data.status === 'success') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Login Successful',
-                                showConfirmButton: false,
-                                timer: 1500,
-                            }).then(() => {
-                                window.location.href = '{{ route('admin.dashboard') }}';
-                            });
-                        }
-                    })
-                    .catch(function(error) {
-                        if (error.response.data.key === 'userNotExist') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'User Not Exist',
-                                showConfirmButton: false,
-                                timer: 1500,
-                            });
-                        } else if (error.response.data.key === 'unverified') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Account Unverified <br> Please Contact Your provider',
-                                showConfirmButton: false,
-                                timer: 1500,
-                            });
-                            invalid
-                        } else if (error.response.data.key === 'invalid') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Invalid Credentials',
-                                showConfirmButton: false,
-                                timer: 1500,
-                            });
-                        } else {
-                            $.each(error.response.data.message, function(k, v) {
-                                $('input[name="' + k + '"]').addClass("has-error");
-                                $('input[name="' + k + '"]').after("<span class='text-danger'>" + v[0] + "</span>");
-                            });
-                        }
-                    });
+            function userLogin()
+            {
+                console.log('lgoniinnk')
             }
+
+            
         </script>
         <!--End For Newsletter Popup-->
     </div>
